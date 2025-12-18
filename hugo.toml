@@ -1,0 +1,11 @@
+baseURL = 'https://javaexplained.com/'
+languageCode = 'en-us'
+title = 'Java Explained'
+theme = 'PaperMod'
+
+[params]
+description = "Java & Spring Boot concepts explained clearly — from basics to production"
+defaultTheme = "light"
+ShowReadingTime = true
+ShowShareButtons = true
+ShowCodeCopyButtons = true
