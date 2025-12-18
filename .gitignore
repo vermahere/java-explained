@@ -1,0 +1,12 @@
+# Hugo build output
+/public/
+
+# Node dependencies
+/node_modules/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+npm-debug.log*
