@@ -1,11 +1,83 @@
-baseURL = 'https://javaexplained.com/'
+baseURL = 'https://java-explained.netlify.app/'
 languageCode = 'en-us'
 title = 'Java Explained'
 theme = 'PaperMod'
+pagination.pagerSize = 10
+
+enableRobotsTXT = true
 
 [params]
 description = "Java & Spring Boot concepts explained clearly — from basics to production"
 defaultTheme = "light"
+disableThemeToggle = false
+
 ShowReadingTime = true
 ShowShareButtons = true
+ShowPostNavLinks = true
+ShowBreadCrumbs = true
 ShowCodeCopyButtons = true
+ShowToc = true
+hideFooter = true
+
+TocOpen = false
+
+comments = false
+
+[params.profileMode]
+  enabled = false
+  title = "Java Explained"
+  subtitle = "Java & Spring Boot concepts explained clearly — from basics to production"
+  imageUrl = ""
+  imageTitle = "Java Explained"
+  imageWidth = 120
+  imageHeight = 120
+
+  [[params.profileMode.buttons]]
+    name = "Start Learning"
+    url = "/java-basics/"
+
+  [[params.profileMode.buttons]]
+    name = "Spring Boot"
+    url = "/spring/"
+
+[params.footer]
+  text = "© Java Explained"
+  copyright = "© Java Explained"
+
+[menu]
+
+  [[menu.main]]
+    name = "Java Basics"
+    url = "/java-basics/"
+    weight = 1
+
+  [[menu.main]]
+    name = "Core Java"
+    url = "/core-java/"
+    weight = 2
+
+  [[menu.main]]
+    name = "Advanced"
+    url = "/advanced-java/"
+    weight = 3
+
+  [[menu.main]]
+    name = "Spring Boot"
+    url = "/spring/"
+    weight = 4
+
+  [[menu.main]]
+    name = "Projects"
+    url = "/projects/"
+    weight = 5
+
+  [[menu.main]]
+    name = "Resources"
+    url = "/resources/"
+    weight = 6
+
+  [[menu.main]]
+    name = "Career"
+    url = "/career/"
+    weight = 7
+
