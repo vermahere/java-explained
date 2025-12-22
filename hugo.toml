@@ -9,7 +9,7 @@ enableRobotsTXT = true
 [params]
 description = "Java & Spring Boot concepts explained clearly — from basics to production"
 defaultTheme = "light"
-disableThemeToggle = false
+disableThemeToggle = true
 
 ShowReadingTime = true
 ShowShareButtons = true
@@ -47,37 +47,18 @@ comments = false
 [menu]
 
   [[menu.main]]
-    name = "Java Basics"
-    url = "/java-basics/"
+    name = "Home"
+    url = "/"
     weight = 1
-
+    
   [[menu.main]]
-    name = "Core Java"
-    url = "/core-java/"
+    name = "About us"
+    url = "/about-us/"
     weight = 2
 
   [[menu.main]]
-    name = "Advanced"
-    url = "/advanced-java/"
+    name = "Contact us"
+    url = "/contact-us/"
     weight = 3
 
-  [[menu.main]]
-    name = "Spring Boot"
-    url = "/spring/"
-    weight = 4
-
-  [[menu.main]]
-    name = "Projects"
-    url = "/projects/"
-    weight = 5
-
-  [[menu.main]]
-    name = "Resources"
-    url = "/resources/"
-    weight = 6
-
-  [[menu.main]]
-    name = "Career"
-    url = "/career/"
-    weight = 7
-
+  
