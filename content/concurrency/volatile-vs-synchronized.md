@@ -1,7 +1,6 @@
 +++
 title = "volatile vs synchronized in Java: What’s the Real Difference?"
 description = "Understand the real difference between volatile and synchronized in Java, including memory visibility, atomicity, and common misconceptions."
-date = 2025-01-01
 draft = false
 tags = ["java", "concurrency", "volatile", "synchronized"]
 categories = ["Concurrency"]
