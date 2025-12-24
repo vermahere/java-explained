@@ -1,7 +1,9 @@
----
-title: "equals() vs == in Java"
-draft: false
----
++++
+title = "equals() vs == in Java"
+draft = false
++++
+
+### equals() vs == in Java
 
 Understanding the difference between `equals()` and `==` is one of the most common — and important — topics in Core Java.  
 Although they may appear similar, they serve very different purposes, and confusing them can lead to subtle bugs.
