@@ -1,6 +1,5 @@
 +++
 title = "Java Explained"
-description = "Explanations of Java concepts"
 draft = false
 +++
 

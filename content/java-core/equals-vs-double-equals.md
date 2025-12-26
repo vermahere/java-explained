@@ -1,22 +1,22 @@
 +++
 title = "equals() vs == in Java"
 draft = false
+categories = ["java-core"]
 +++
 
-### equals() vs == in Java
+### Introduction
 
-Understanding the difference between `equals()` and `==` is one of the most common — and important — topics in Core Java.  
-Although they may appear similar, they serve very different purposes, and confusing them can lead to subtle bugs.
+Understanding the difference between `equals()` and `==` is one of the most common and important topics in Core Java. Although they may seem similar, they serve very different purposes. Confusing them can lead to subtle bugs. 
 
-This article explains what each one does, why they exist, and when to use which.
+This article explains what each one does, why they exist, and when to use each one.
 
 ---
 
 ### What does `==` do in Java?
 
-The `==` operator compares whether two references point to the same object in memory.
+The `==` operator checks if two references point to the same object in memory. 
 
-For reference types, it checks identity, not content.
+For reference types, it looks at identity, not content.
 
 #### Example
 
@@ -27,15 +27,15 @@ String b = new String("java");
 System.out.println(a == b); // false
 ```
 
-Even though `a` and `b` contain the same text, they refer to different objects, so `==` returns `false`.
+Even though `a` and `b` have the same text, they point to different objects, so `==` returns `false`.
 
 ---
 
 ### What does `equals()` do?
 
-The `equals()` method is used to compare logical equality — whether two objects are meaningfully equal.
+The `equals()` method is used to compare logical equality. It checks if two objects are meaningfully equal, meaning they have the same contents.
 
-By default, `equals()` behaves the same as `==` because it is inherited from `Object`:
+By default, `equals()` behaves the same as `==` because it is inherited from `Object` class.
 
 ```java
 public boolean equals(Object obj) {
@@ -43,7 +43,7 @@ public boolean equals(Object obj) {
 }
 ```
 
-However, many Java classes override `equals()` to define what equality means for them.
+However, many Java classes override `equals()` to specify what equality means to them.
 
 ---
 
@@ -136,6 +136,8 @@ class Person {
 }
 ```
 
+The above implementation of the equals method returns true if two Person objects have the same name and age.
+
 Failing to override `equals()` correctly can break:
 - Collections (`HashSet`, `HashMap`)
 - Caching logic
@@ -151,7 +153,7 @@ The contract is simple:
 
 > If two objects are equal according to `equals()`, they must have the same `hashCode()`.
 
-Violating this contract leads to unpredictable behavior in hash-based collections.
+If you break this contract, it can cause unpredictable behavior in hash-based collections.
 
 ---
 
@@ -176,4 +178,4 @@ Use `equals()` when:
 - They are not interchangeable
 - Using the wrong one can introduce subtle bugs
 
-Understanding this distinction is fundamental to writing correct and predictable Java code.
+Understanding this distinction is essential for writing correct and predictable Java code.

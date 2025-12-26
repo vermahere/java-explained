@@ -1,14 +1,9 @@
 +++
+title = "Java Core Concepts"
+description = "Deep dive into core concepts of Java"
 draft = false
-tags = ["java", "core java", "java-basics"]
 categories = ["Java Core"]
 +++
-
-### Java Core Concepts
-
-Deep dive into core concepts of Java
-
----
 
 ### Explore the articles below:
 
