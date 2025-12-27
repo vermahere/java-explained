@@ -1,3 +1,19 @@
-selector {
-  background-color: white;
+/* FORCE PURE WHITE AT THE ROOT LEVEL */
+html {
+  background: #ffffff !important;
+  background-image: none !important;
 }
+
+/* Ensure body does not introduce layering */
+body {
+  background: transparent !important;
+}
+
+/* Safety: remove any theme canvas */
+:root {
+  --theme: #ffffff;
+  --entry: #ffffff;
+}
+
+
+

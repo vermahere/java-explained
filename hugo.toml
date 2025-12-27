@@ -11,7 +11,10 @@ description = "Java & Spring Boot concepts explained clearly — from basics to 
 defaultTheme = "light"
 disableThemeToggle = true
 
+ShowAuthor = false
+ShowPostMeta = false
 ShowReadingTime = true
+
 ShowShareButtons = true
 ShowPostNavLinks = true
 ShowBreadCrumbs = true
@@ -40,6 +43,10 @@ comments = false
     name = "Spring Boot"
     url = "/spring/"
 
+[params.author]
+  name = "Amit Verma"
+  image = "/images/authors/amit-verma.png"
+
 [params.footer]
   text = "© Java Explained"
   copyright = "© Java Explained"
@@ -53,6 +60,11 @@ comments = false
     
   [[menu.main]]
     name = "About"
-    url = "/about-us/"
+    url = "/about/"
     weight = 2
+    
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
 

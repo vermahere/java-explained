@@ -1,0 +1,25 @@
+{{ define "main" }}
+<article class="author-page">
+  <img
+    src="{{ .Site.Params.author.image }}"
+    alt="{{ .Site.Params.author.name }}"
+    class="author-avatar-lg"
+  />
+
+  <h1>{{ .Title }}</h1>
+
+  <p class="author-bio">
+    Java developer with a passion for explaining complex concepts in a clear,
+    practical way. Creator of <strong>Java Explained</strong>.
+  </p>
+
+  <h2>Articles by {{ .Title }}</h2>
+
+  {{ range where site.RegularPages "Params.author" .Title }}
+    <div class="author-post">
+      <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+      <span>{{ .Date.Format "Jan 2, 2006" }}</span>
+    </div>
+  {{ end }}
+</article>
+{{ end }}

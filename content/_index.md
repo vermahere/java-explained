@@ -3,7 +3,7 @@ title = "Java Explained"
 draft = false
 +++
 
-### What is Java?
+### Java: An Introduction
 
 Java is a **high-level, object-oriented programming language** widely used to build backend systems, web applications, android apps, enterprise software and large-scale distributed systems.
 

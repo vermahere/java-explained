@@ -1,0 +1,15 @@
+<div class="post-author">
+  <img
+    src="{{ .Site.Params.author.image }}"
+    alt="{{ .Site.Params.author.name }}"
+    class="author-avatar"
+  />
+
+  <a href="/author/amit-verma/" class="author-name">
+    By {{ .Site.Params.author.name }}
+  </a>
+
+  {{ with .Date }}
+    <span class="author-date"> · {{ .Format "Jan 2, 2006" }}</span>
+  {{ end }}
+</div>

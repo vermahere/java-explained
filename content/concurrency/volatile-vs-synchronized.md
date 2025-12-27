@@ -1,5 +1,7 @@
 +++
 title = "volatile vs synchronized in Java: What’s the real difference?"
+date = "2025-12-27"
+author = "Amit Verma"
 draft = false
 categories = ["concurrency"]
 +++

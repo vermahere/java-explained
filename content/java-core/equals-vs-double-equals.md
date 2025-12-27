@@ -1,5 +1,7 @@
 +++
 title = "equals() vs == in Java"
+date = "2025-12-27"
+author = "Amit Verma"
 draft = false
 categories = ["java-core"]
 +++

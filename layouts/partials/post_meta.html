@@ -1,0 +1,7 @@
+{{ if .Params.showMeta | default true }}
+<span class="post-meta">
+  {{ if .ReadingTime }}
+    {{ .ReadingTime }} min
+  {{ end }}
+</span>
+{{ end }}
