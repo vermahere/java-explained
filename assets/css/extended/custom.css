@@ -15,5 +15,36 @@ body {
   --entry: #ffffff;
 }
 
+/* Links & Breadcrumbs - normal */
+a,
+.breadcrumb a {
+  color: #2563EB;
+  text-decoration: none;
+  transition: color 0.3s ease; /* smooth hover effect */
+}
 
+/* Links & Breadcrumbs - hover */
+a:hover,
+.breadcrumb a:hover {
+  color: #1E40AF;
+  text-decoration: none;
+}
+
+.post-author {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;   /* 👈 controls space perfectly */
+}
+
+.post-author-label {
+  color: #6b7280;
+  font-weight: 500;
+}
+
+/* Underline ONLY author link in post meta */
+.post-author a {
+  text-decoration: none;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+}
 

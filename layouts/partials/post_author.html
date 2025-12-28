@@ -4,9 +4,10 @@
     alt="{{ .Site.Params.author.name }}"
     class="author-avatar"
   />
-
+  
+  <span class="post-author-label">By</span>
   <a href="/author/amit-verma/" class="author-name">
-    By {{ .Site.Params.author.name }}
+    {{ .Site.Params.author.name }}
   </a>
 
   {{ with .Date }}
