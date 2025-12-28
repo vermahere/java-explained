@@ -94,29 +94,31 @@
   "dateModified": {{ .Lastmod }},
   {{- with (.Params.author | default site.Params.author) }}
   "author":
-    {{- if (or (eq (printf "%T" .) "[]string") (eq (printf "%T" .) "[]interface {}")) -}}
-  [{{- range $i, $v := . -}}
-  {{- if $i }}, {{end -}}
+{{- if (or (eq (printf "%T" .) "[]string") (eq (printf "%T" .) "[]interface {}")) -}}
+[
+  {{- range $i, $v := . -}}
+  {{- if $i }}, {{ end -}}
   {
     "@type": "Person",
     "name": {{ $v }},
-    "url": "{{ site.BaseURL }}author/amit-verma/",
-    "sameAs": [
-      "https://www.linkedin.com/in/amit-verma-0103/"
-    ]
+    "url": "{{ site.BaseURL }}{{ site.Params.author.url }}",
+    {{- with site.Params.author.sameAs }}
+    "sameAs": {{ jsonify . }}
+    {{- end }}
   }
-  {{- end }}],
-    {{- else -}}
-  {
-    "@type": "Person",
-    "name": {{ . }},
-    "url": "{{ site.BaseURL }}author/amit-verma/",
-    "sameAs": [
-      "https://www.linkedin.com/in/amit-verma-0103/"
-    ]
-  },
-    {{- end -}}
+  {{- end -}}
+],
+{{- else -}}
+{
+  "@type": "Person",
+  "name": {{ . }},
+  "url": "{{ site.BaseURL }}{{ site.Params.author.url }}",
+  {{- with site.Params.author.sameAs }}
+  "sameAs": {{ jsonify . }}
   {{- end }}
+},
+{{- end -}}
+{{- end }}
   "mainEntityOfPage": {
     "@type": "WebPage",
     "@id": {{ .Permalink | safeHTML }}
@@ -138,11 +140,11 @@
 {
   "@context": "https://schema.org",
   "@type": "Person",
-  "name": "Amit Verma",
-  "url": "https://javaexplained.com/author/amit-verma/",
-  "image": "/images/authors/amit-verma.png",
-  "sameAs": [
-    "https://www.linkedin.com/in/amit-verma-0103/"
-  ]
+  "name": "{{ .Site.Params.author.name }}",
+  "url": "{{ .Site.BaseURL }}{{ .Site.Params.author.url }}",
+  "image": "{{ .Site.BaseURL }}{{ .Site.Params.author.image }}",
+  {{- with .Site.Params.author.sameAs }}
+  "sameAs": {{ jsonify . }}
+  {{- end }}
 }
 </script>

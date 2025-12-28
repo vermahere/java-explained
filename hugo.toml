@@ -46,6 +46,12 @@ comments = false
 [params.author]
   name = "Amit Verma"
   image = "/images/authors/amit-verma.png"
+  url = "/author/amit-verma/"
+
+  sameAs = [
+    "https://www.linkedin.com/in/amit-verma-0103/",
+    "https://github.com/vermahere"
+]
 
 [params.footer]
   text = "© Java Explained"
