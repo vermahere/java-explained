@@ -6,16 +6,15 @@ draft = false
 categories = ["Java Core"]
 +++
 
-## Introduction
+### Introduction
 
-In Java, `equals()` and `hashCode()` are two fundamental methods inherited from the `Object` class.  
-They play a critical role in object comparison and in the correct functioning of hash-based collections such as `HashMap`, `HashSet`, and `Hashtable`.
+In Java, `equals()` and `hashCode()` are two important methods inherited from the `Object` class. They play a key role in object comparison and in the correct functioning of hash-based collections such as `HashMap`, `HashSet`, and `Hashtable`.
 
-A misunderstanding of their contract often leads to subtle and hard-to-diagnose bugs in real-world applications.
+A lack of understanding of their contract often results in subtle bugs that are difficult to diagnose in real-world applications.
 
 ---
 
-## What is `equals()`?
+### What is `equals()`?
 
 The `equals()` method is used to determine **logical equality** between two objects.
 
@@ -27,11 +26,11 @@ public boolean equals(Object obj) {
 }
 ```
 
-This means two distinct objects with identical data are considered unequal unless `equals()` is overridden.
+This means that two distinct objects, even if they contain identical data, are considered unequal by default. To compare them based on their data, you must override the `equals()` method in your class.
 
 ---
 
-## What is `hashCode()`?
+### What is `hashCode()`?
 
 The `hashCode()` method returns an integer value that represents the object in hash-based data structures.
 
@@ -39,7 +38,7 @@ Collections like `HashMap` and `HashSet` use this value to determine where an ob
 
 ---
 
-## Why Does the Contract Exist?
+### Why does the contract exist?
 
 Hash-based collections rely on **both methods working together**:
 
@@ -50,36 +49,36 @@ If these methods are inconsistent, collections may behave incorrectly.
 
 ---
 
-## The `equals()` Contract
+### The `equals()` contract
 
 A correct `equals()` implementation must satisfy the following properties:
 
-### Reflexive
+#### Reflexive
 ```java
 x.equals(x) == true
 ```
 
-### Symmetric
+#### Symmetric
 ```java
 x.equals(y) == y.equals(x)
 ```
 
-### Transitive
+#### Transitive
 ```java
 if x.equals(y) and y.equals(z), then x.equals(z)
 ```
 
-### Consistent
-Repeated calls return the same result if objects are unchanged.
+#### Consistent
+Repeated calls return the same result, provided no information used in equals comparisons on the objects is modified.
 
-### Non-null
+#### Non-null
 ```java
 x.equals(null) == false
 ```
 
 ---
 
-## The `hashCode()` Contract
+### What is the contract?
 
 The relationship between `equals()` and `hashCode()` is strict:
 
@@ -91,7 +90,7 @@ Important clarifications:
 
 ---
 
-## Correct Implementation Example
+### Correct Implementation Example
 
 ```java
 class User {
@@ -119,17 +118,22 @@ class User {
 ```
 
 This implementation:
-- Uses the same fields in both methods
-- Preserves the contract
-- Works correctly in hash-based collections
+- overrides both `equals()` and `hashCode()`
+- uses the same fields (`id` and `email`) in both methods
+- preserves the contract
+- works correctly in hash-based collections
 
 ---
 
-## Broken Example (Common Mistake)
+### Broken Example (Common Mistake)
 
 ```java
 class User {
     private int id;
+    
+    public User(int id) {
+		this.id = id;
+	}
 
     @Override
     public boolean equals(Object o) {
@@ -138,11 +142,11 @@ class User {
         User user = (User) o;
         return id == user.id;
     }
-    // hashCode() NOT overridden
+    // hashCode() Not overridden
 }
 ```
 
-### What goes wrong?
+#### What goes wrong?
 
 ```java
 User u1 = new User(1);
@@ -151,13 +155,17 @@ User u2 = new User(1);
 Set<User> users = new HashSet<>();
 users.add(u1);
 users.add(u2);
+
+System.out.println(u1.equals(u2)); //Returns true
+
+System.out.println(users.size()); //Returns 2
 ```
 
-Even though `equals()` returns true, both objects are added because they produce different hash codes.
+Even though `equals()` returns `true`, both objects are added to the `HashSet` because `hashCode()` is not overridden consistently with `equals()`. As a result, they produce different hash codes, which violates the `equals()/hashCode()` contract.
 
 ---
 
-## Why This Breaks Hash-Based Collections
+### Why this breaks Hash-based collections
 
 Hash-based collections follow this process:
 
@@ -165,11 +173,11 @@ Hash-based collections follow this process:
 2. Find the bucket
 3. Use `equals()` to compare entries
 
-If equal objects have different hash codes, step 3 is never reached.
+If equal objects have different hash codes, step 3 is never reached because the objects end up in different buckets and are therefore treated as distinct entries.
 
 ---
 
-## Hash Collisions
+### Hash collisions
 
 Two unequal objects can legally share the same hash code:
 
@@ -185,36 +193,16 @@ Collisions affect performance, not correctness.
 
 ---
 
-## Best Practices
+### Key takeaways
 
 - Always override `hashCode()` when overriding `equals()`
-- Use immutable fields where possible
 - Avoid mutable fields in both methods
 - Use `Objects.hash()` for clarity
 - Keep implementations simple and consistent
-
----
-
-## When You Should Not Override Them
-
-- When object identity matters more than logical equality
-- For singleton objects
-- For objects managed strictly by reference
-
----
-
-## Summary
-
-- `equals()` defines logical equality
-- `hashCode()` supports efficient hashing
-- Both must be consistent
 - Violating the contract breaks collections
-- This is a core Java concept every developer must understand
 
 ---
 
-## Related Articles
+### Related Articles
 
 - [equals() vs == in Java](/java-core/equals-vs-double-equals/)
-- How `HashMap` works internally
-- Immutability and its impact on hashing

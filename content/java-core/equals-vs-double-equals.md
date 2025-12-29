@@ -175,7 +175,7 @@ Use `equals()` when:
 
 ---
 
-### Key takeaway
+### Key takeaways
 
 - `==` checks reference equality
 - `equals()` checks logical equality
