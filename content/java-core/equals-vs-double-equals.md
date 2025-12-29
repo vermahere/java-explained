@@ -155,7 +155,9 @@ The contract is simple:
 
 > If two objects are equal according to `equals()`, they must have the same `hashCode()`.
 
-If you break this contract, it can cause unpredictable behavior in hash-based collections.
+This rule is part of the [hashCode() and equals() contract](/java-core/hashcode-and-equals-contract/) and ensures that hash-based collections like `HashMap` and `HashSet` function correctly.
+
+Breaking this contract can lead to unpredictable behavior, such as duplicate entries or failed lookups.
 
 ---
 
