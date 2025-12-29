@@ -46,31 +46,31 @@ public class HelloWorld {
 
 Choose an area to explore:
 
-### ☕ Java Core
+### Java Core
 Language fundamentals and common Java pitfalls  
 → [Java Core](/java-core/)
 
 ---
 
-### 🧩 OOPS
+### OOPS
 object-oriented concepts  
 → [OOPS](/oops/)
 
 ---
 
-### 🔁 Concurrency
+### Concurrency
 Deep dives into multithreading, memory visibility, and thread safety  
 → [Concurrency](/concurrency/)
 
 ---
 
-### ⚙️ JVM & Performance
+### JVM & Performance
 How the JVM works, memory management, and performance-related topics  
 → [JVM](/jvm/)
 
 ---
 
-### 📦 Collections
+### Collections
 Java collections explained with internals, performance trade-offs, and best practices  
 → [Collections](/collections/)
 

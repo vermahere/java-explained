@@ -25,7 +25,7 @@ If you work with multi-threaded Java code, these articles will help you understa
 
 If you’re new to Java concurrency, start with these articles:
 
-- 👉 [volatile vs synchronized](/concurrency/volatile-vs-synchronized/)
-- 👉 [Java Memory Model explained](/concurrency/java-memory-model/)
-- 👉 [Happens-before relationship](/concurrency/happens-before/)
+- [volatile vs synchronized](/concurrency/volatile-vs-synchronized/)
+- [Java Memory Model explained](/concurrency/java-memory-model/)
+- [Happens-before relationship](/concurrency/happens-before/)
 
