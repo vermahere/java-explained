@@ -49,7 +49,7 @@ However, many Java classes override `equals()` to specify what equality means to
 
 ---
 
-### Example: String equality
+### Example: `String` equality
 
 ```java
 String a = new String("java");
@@ -85,7 +85,7 @@ Examples where `equals()` is required:
 
 ---
 
-### Common mistake: Using `==` for object comparison
+### Common mistake: using `==` for object comparison
 
 ```java
 Integer x = 1000;
@@ -155,7 +155,7 @@ The contract is simple:
 
 > If two objects are equal according to `equals()`, they must have the same `hashCode()`.
 
-This rule is part of the [hashCode() and equals() contract](/java-core/hashcode-and-equals-contract/) and ensures that hash-based collections like `HashMap` and `HashSet` function correctly.
+This rule is fundamental to the [hashCode() and equals() contract](/java-core/hashcode-and-equals-contract/) and ensures that hash-based collections like `HashMap` and `HashSet` function correctly.
 
 Breaking this contract can lead to unpredictable behavior, such as duplicate entries or failed lookups.
 

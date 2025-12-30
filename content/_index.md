@@ -64,7 +64,7 @@ Deep dives into multithreading, memory visibility, and thread safety
 
 ---
 
-### JVM & Performance
+### JVM Fundamentals
 How the JVM works, memory management, and performance-related topics  
 → [JVM](/jvm/)
 

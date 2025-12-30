@@ -30,25 +30,6 @@ This means that two distinct objects, even if they contain identical data, are c
 
 ---
 
-### What is `hashCode()`?
-
-The `hashCode()` method returns an integer value that represents the object in hash-based data structures.
-
-Collections like `HashMap` and `HashSet` use this value to determine where an object should be stored internally.
-
----
-
-### Why does the contract exist?
-
-Hash-based collections rely on **both methods working together**:
-
-1. `hashCode()` determines the bucket
-2. `equals()` determines equality within that bucket
-
-If these methods are inconsistent, collections may behave incorrectly.
-
----
-
 ### The `equals()` contract
 
 A correct `equals()` implementation must satisfy the following properties:
@@ -75,6 +56,24 @@ Repeated calls return the same result, provided no information used in equals co
 ```java
 x.equals(null) == false
 ```
+---
+
+### What is `hashCode()`?
+
+The `hashCode()` method returns an integer value that represents the object in hash-based data structures.
+
+Collections like `HashMap` and `HashSet` use this value to determine where an object should be stored internally.
+
+---
+
+### Why does the contract exist?
+
+Hash-based collections rely on **both methods working together**:
+
+1. `hashCode()` determines the bucket
+2. `equals()` determines equality within that bucket
+
+If these methods are inconsistent, collections may behave incorrectly.
 
 ---
 
@@ -90,7 +89,7 @@ Important clarifications:
 
 ---
 
-### Correct Implementation Example
+### Correct implementation example
 
 ```java
 class User {
@@ -125,7 +124,7 @@ This implementation:
 
 ---
 
-### Broken Example (Common Mistake)
+### Broken example (common mistake)
 
 ```java
 class User {
@@ -165,7 +164,7 @@ Even though `equals()` returns `true`, both objects are added to the `HashSet` b
 
 ---
 
-### Why this breaks Hash-based collections
+### Why this breaks hash-based collections
 
 Hash-based collections follow this process:
 
@@ -203,6 +202,6 @@ Collisions affect performance, not correctness.
 
 ---
 
-### Related Articles
+### Related articles
 
 - [equals() vs == in Java](/java-core/equals-vs-double-equals/)
