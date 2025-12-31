@@ -2,7 +2,7 @@
 title = "Java Core Concepts"
 description = "Deep dive into core concepts of Java"
 draft = false
-categories = ["Java Core"]
+categories = ["java-core"]
 +++
 
 ### Explore the articles below:
